@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 /**
  * https://leetcode-cn.com/problems/largest-bst-subtree/
@@ -16,7 +16,7 @@ public class _333_最大BST子树 {
      * @param root
      * @return
      */
-    private Info getInfo(TreeNode root) {
+    private Info getInfo(TreeNode<Integer> root) {
         if (root == null) return null;
         // li(left info)：左子树的最大BST子树信息
         Info li = getInfo(root.left);
@@ -80,7 +80,7 @@ public class _333_最大BST子树 {
         /** 最小值 */
         public int min;
 
-        public Info(TreeNode root, int size, int max, int min) {
+        public Info(TreeNode<Integer> root, int size, int max, int min) {
             this.root = root;
             this.size = size;
             this.max = max;

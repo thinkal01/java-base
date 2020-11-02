@@ -3,8 +3,8 @@ package com.note.problem;
 /**
  * 有一排正数，玩家A和玩家B都可以看到。
  * 每位玩家在拿走数字的时候，都只能从最左和最右的数中选择一个。
- * 玩家A先拿，玩家B再拿，两人交替拿走所有的数字，
- * 两人都力争自己拿到的数的总和比对方多。请返回最后获胜者的分数。
+ * 玩家A先拿，玩家B再拿，两人交替拿走所有数字，
+ * 两人都力争自己拿到的数总和比对方多。请返回最后获胜者的分数。
  *
  * 例如：
  * 5,2,3,4
@@ -16,34 +16,40 @@ public class Problem_01_CardsInLine {
 
     /**
      * 使用递归方式
-     * @param arr
-     * @return
      */
     public static int win1(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
         }
+
         return Math.max(f(arr, 0, arr.length - 1), s(arr, 0, arr.length - 1));
     }
 
+    /**
+     * 先发
+     */
     public static int f(int[] arr, int i, int j) {
         if (i == j) {
+            // 最后一个数
             return arr[i];
         }
+
         return Math.max(arr[i] + s(arr, i + 1, j), arr[j] + s(arr, i, j - 1));
     }
 
+    /**
+     * 后发
+     */
     public static int s(int[] arr, int i, int j) {
         if (i == j) {
             return 0;
         }
+
         return Math.min(f(arr, i + 1, j), f(arr, i, j - 1));
     }
 
     /**
      * 使用两个数组做缓存
-     * @param arr
-     * @return
      */
     public static int win2(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -53,6 +59,7 @@ public class Problem_01_CardsInLine {
         int[][] f = new int[arr.length][arr.length];
         int[][] s = new int[arr.length][arr.length];
 
+        // i为开始下标,j为结束下标
         for (int j = 0; j < arr.length; j++) {
             f[j][j] = arr[j];
             for (int i = j - 1; i >= 0; i--) {
@@ -66,8 +73,6 @@ public class Problem_01_CardsInLine {
 
     /**
      * 使用一个数组做缓存
-     * @param arr
-     * @return
      */
     public static int win3(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -97,8 +102,6 @@ public class Problem_01_CardsInLine {
 
     /**
      * 使用一个数组缓存,非递归方式
-     * @param arr
-     * @return
      */
     public static int win4(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -163,3 +166,5 @@ public class Problem_01_CardsInLine {
     }
 
 }
+
+

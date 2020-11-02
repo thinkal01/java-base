@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;

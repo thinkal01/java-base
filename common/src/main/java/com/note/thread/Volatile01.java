@@ -26,7 +26,7 @@ public class Volatile01 {
             }).start();
         }
 
-        //保证前面的线程都执行完
+        // 保证前面的线程都执行完
         while (Thread.activeCount() > 1) Thread.yield();
         // <=10000
         System.out.println(inc);

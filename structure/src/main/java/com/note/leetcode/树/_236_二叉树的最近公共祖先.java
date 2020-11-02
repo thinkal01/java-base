@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 /**
  * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/

@@ -1,6 +1,7 @@
 package com.note.leetcode.高频题;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LRUCache {
     private Map<Integer, Node> map;
@@ -57,7 +58,7 @@ public class LRUCache {
             removeNode(node);
         } else { // 添加一对新的key-value
             if (map.size() == capacity) {
-                // 淘汰最近最少使用的node\
+                // 淘汰最近最少使用的node
                 removeNode(map.remove(last.prev.key));
 //                map.remove(last.prev.key);
 //                removeNode(last.prev);

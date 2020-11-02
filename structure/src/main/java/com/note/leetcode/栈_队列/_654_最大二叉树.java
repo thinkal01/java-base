@@ -1,6 +1,6 @@
 package com.note.leetcode.栈_队列;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 import java.util.Arrays;
 import java.util.Stack;

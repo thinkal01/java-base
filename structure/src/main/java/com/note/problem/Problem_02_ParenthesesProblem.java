@@ -11,8 +11,10 @@ public class Problem_02_ParenthesesProblem {
         if (str == null || str.equals("")) {
             return false;
         }
+
         char[] chas = str.toCharArray();
         int status = 0;
+
         for (int i = 0; i < chas.length; i++) {
             // 非左右括号
             if (chas[i] != ')' && chas[i] != '(') {
@@ -27,6 +29,7 @@ public class Problem_02_ParenthesesProblem {
                 status++;
             }
         }
+
         return status == 0;
     }
 

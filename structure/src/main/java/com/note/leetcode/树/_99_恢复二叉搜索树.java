@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 /**
  * https://leetcode-cn.com/problems/recover-binary-search-tree/
@@ -10,17 +10,17 @@ public class _99_恢复二叉搜索树 {
     /**
      * 上一次中序遍历过的节点
      */
-    private TreeNode prev;
+    private TreeNode<Integer> prev;
     /**
      * 第一个错误节点
      */
-    private TreeNode first;
+    private TreeNode<Integer> first;
     /**
      * 第二个错误节点
      */
-    private TreeNode second;
+    private TreeNode<Integer> second;
 
-    private void find(TreeNode node) {
+    private void find(TreeNode<Integer> node) {
         // 出现了逆序对
         if (prev != null && prev.val > node.val) {
             // 第2个错误节点：最后一个逆序对中较小的那个节点

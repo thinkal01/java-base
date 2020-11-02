@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 import com.note.stack.Stack;
 import org.junit.Test;
 
@@ -34,7 +34,7 @@ public class _98_验证二叉搜索树 {
         System.out.println(isValidBST(treeNode5));
     }
 
-    public boolean helper(TreeNode node, Integer lower, Integer upper) {
+    public boolean helper(TreeNode<Integer> node, Integer lower, Integer upper) {
         if (node == null) return true;
 
         int val = node.val;
@@ -54,7 +54,7 @@ public class _98_验证二叉搜索树 {
     /**
      * 中序遍历以后得到的序列一定是升序序列
      */
-    public boolean isValidBST2(TreeNode root) {
+    public boolean isValidBST2(TreeNode<Integer> root) {
         Stack<TreeNode> stack = new Stack();
         double inorder = -Double.MAX_VALUE;
 

@@ -1,6 +1,6 @@
 package com.note.leetcode.树;
 
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 public class _104_二叉树的最大深度 {
     public int maxDepth(TreeNode root) {

@@ -2,7 +2,7 @@ package com.note.leetcode.树;
 
 import com.note.collection.map.HashMap;
 import com.note.collection.map.Map;
-import com.note.leetcode.common.TreeNode;
+import com.note.common.TreeNode;
 
 /**
  * 中序遍历 inorder = [9,3,15,20,7]
