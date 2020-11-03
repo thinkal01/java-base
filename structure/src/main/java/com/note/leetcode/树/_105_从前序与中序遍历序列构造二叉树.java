@@ -2,6 +2,7 @@ package com.note.leetcode.树;
 
 import com.note.leetcode.common.TreeNode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ public class _105_从前序与中序遍历序列构造二叉树 {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         int n = preorder.length;
-        // 构造哈希映射，帮助我们快速定位根节点
+        // 构造哈希映射，帮助快速定位根节点
         indexMap = new HashMap<>();
         for (int i = 0; i < n; i++) {
             indexMap.put(inorder[i], i);
@@ -43,6 +44,28 @@ public class _105_从前序与中序遍历序列构造二叉树 {
         // 递归地构造右子树，并连接到根节点
         // 先序遍历中「从 左边界+1+左子树节点数目 开始到 右边界」的元素就对应了中序遍历中「从 根节点定位+1 到 右边界」的元素
         root.right = myBuildTree(preorder, inorder, preorder_left + size_left_subtree + 1, preorder_right, inorder_root + 1, inorder_right);
+
+        return root;
+    }
+
+    /**
+     * 传入数组的拷贝
+     *
+     * @param pre
+     * @param in
+     * @return
+     */
+    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        if (pre == null || in == null || pre.length == 0 || in.length == 0) return null;
+        if (pre.length != in.length) return null;
+
+        TreeNode root = new TreeNode(pre[0]);
+        for (int i = 0; i < pre.length; ++i) {
+            if (pre[0] == in[i]) {
+                root.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 0, i));
+                root.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i, in.length));
+            }
+        }
 
         return root;
     }
