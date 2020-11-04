@@ -2,9 +2,6 @@ package com.note.leetcode.链表;
 
 /**
  * https://leetcode-cn.com/problems/partition-list/
- *
- * @author MJ
- *
  */
 public class _0086_分隔链表 {
     public ListNode partition(ListNode head, int x) {

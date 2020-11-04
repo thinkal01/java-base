@@ -6,11 +6,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class _101_对称二叉树 {
-    public boolean isSymmetric(TreeNode root) {
-        return check(root, root);
+    public boolean isSymmetric3(TreeNode root) {
+        return check2(root, root);
     }
 
-    public boolean check(TreeNode u, TreeNode v) {
+    public boolean check2(TreeNode u, TreeNode v) {
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(u);
         q.offer(v);
@@ -68,4 +68,21 @@ public class _101_对称二叉树 {
 
         return leftList.isEmpty() && rightList.isEmpty();
     }
+
+    public boolean isSymmetric(TreeNode root) {
+        return check(root, root);
+    }
+
+    public boolean check(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p == null || q == null) {
+            return false;
+        }
+
+        return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
+    }
+
 }
