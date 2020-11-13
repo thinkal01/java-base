@@ -11,8 +11,8 @@ public class Problem_26_SubMatrixMaxSum {
         }
 
         int max = Integer.MIN_VALUE;
-        int cur = 0;
-        int[] s = null; // 累加数组
+        int cur;
+        int[] s; // 累加数组
         /**
          * 分别求包含以下行最大值,累加行之间的和求得
          * 1 12 123 1234

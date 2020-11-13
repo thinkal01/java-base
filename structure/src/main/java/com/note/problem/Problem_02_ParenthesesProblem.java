@@ -12,20 +12,20 @@ public class Problem_02_ParenthesesProblem {
             return false;
         }
 
-        char[] chas = str.toCharArray();
+        char[] chars = str.toCharArray();
         int status = 0;
 
-        for (int i = 0; i < chas.length; i++) {
+        for (int i = 0; i < chars.length; i++) {
             // 非左右括号
-            if (chas[i] != ')' && chas[i] != '(') {
+            if (chars[i] != ')' && chars[i] != '(') {
                 return false;
             }
             // 右括号,status-1
-            if (chas[i] == ')' && --status < 0) {
+            if (chars[i] == ')' && --status < 0) {
                 return false;
             }
             // 左括号,status+1
-            if (chas[i] == '(') {
+            if (chars[i] == '(') {
                 status++;
             }
         }
@@ -44,15 +44,15 @@ public class Problem_02_ParenthesesProblem {
             return 0;
         }
 
-        char[] chas = str.toCharArray();
-        int[] dp = new int[chas.length];
+        char[] chars = str.toCharArray();
+        int[] dp = new int[chars.length];
         int pre = 0;
         int res = 0;
 
-        for (int i = 1; i < chas.length; i++) {
-            if (chas[i] == ')') {
+        for (int i = 1; i < chars.length; i++) {
+            if (chars[i] == ')') {
                 pre = i - dp[i - 1] - 1;
-                if (pre >= 0 && chas[pre] == '(') {
+                if (pre >= 0 && chars[pre] == '(') {
                     dp[i] = dp[i - 1] + 2 + (pre > 0 ? dp[pre - 1] : 0);
                 }
             }
