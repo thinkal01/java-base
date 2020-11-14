@@ -6,8 +6,6 @@ import java.util.Arrays;
 
 public class _1235_规划兼职工作 {
 
-    /**
-     */
     @Test
     public void test() {
         System.out.println(jobScheduling(new int[]{6, 15, 7, 11, 1, 3, 16, 2}, new int[]{19, 18, 19, 16, 10, 8, 19, 8}, new int[]{2, 9, 1, 19, 5, 7, 3, 19}));
