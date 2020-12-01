@@ -9,6 +9,8 @@ import org.junit.Test;
 public class _12_print_max_n {
     @Test
     public void test() {
+        StringBuilder sb = new StringBuilder();
+        sb.deleteCharAt(sb.length()-1);
         printToMaxOfNDigits(3);
     }
 

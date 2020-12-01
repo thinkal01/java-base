@@ -33,8 +33,10 @@ public class _188_股票4 {
                 /**
                  * 不做处理,dp[i][j−1]
                  * 卖出股票，设是在第m天买入,prices[j]−prices[m]+dp[i−1][m],where m=0,1...j−1
+                 * dp[i - 1][j - n] + prices[j] - prices[j-n],最大值
                  */
-                maxDiff = Math.max(maxDiff, dp[i - 1][j - 1] - prices[j]);
+                // maxDiff = Math.max(maxDiff, dp[i - 1][j - 1] - prices[j]);
+                maxDiff = Math.max(maxDiff, dp[i - 1][j - 1] - prices[j - 1]);
                 dp[i][j] = Math.max(dp[i][j - 1], prices[j] + maxDiff);
             }
         }

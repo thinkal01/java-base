@@ -30,7 +30,7 @@ public class _03_1的个数 {
         System.out.println(count);
 
         /**
-         * N - 1) & N 消除最后一个1
+         * (N - 1) & N 消除最后一个1
          */
         count = 0;
         while (N != 0) {

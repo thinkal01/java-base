@@ -6,6 +6,22 @@ package com.note.leetcode.动态规划;
 public class _47_礼物的最大价值 {
 
     public int maxValue(int[][] grid) {
+        if (grid.length == 0 || grid[0].length == 0) return 0;
+
+        int row = grid.length;
+        int column = grid[0].length;
+
+        int[] dp = new int[column + 1];
+        for (int i = 0; i < row; ++i) {
+            for (int j = 0; j < column; ++j) {
+                dp[j + 1] = Math.max(dp[j], dp[j + 1]) + grid[i][j];
+            }
+        }
+
+        return dp[column];
+    }
+
+    public int maxValue2(int[][] grid) {
         int rows = grid.length;
         int cols = grid[0].length;
 
@@ -33,7 +49,7 @@ public class _47_礼物的最大价值 {
     /**
      * 原地修改
      */
-    public int maxValue2(int[][] grid) {
+    public int maxValue3(int[][] grid) {
         int m = grid.length, n = grid[0].length;
 
         for (int i = 0; i < m; i++) {

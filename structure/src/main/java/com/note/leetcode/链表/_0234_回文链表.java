@@ -72,12 +72,13 @@ public class _0234_回文链表 {
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(2);
-//		head.next.next.next.next = new ListNode(1);
+        head.next.next.next.next = new ListNode(1);
         System.out.println(head);
 
         _0234_回文链表 obj = new _0234_回文链表();
-        obj.isPalindrome(head);
+        System.out.println(obj.isPalindrome(head));
 
-        System.out.println(head);
+        // System.out.println(head);
     }
+
 }

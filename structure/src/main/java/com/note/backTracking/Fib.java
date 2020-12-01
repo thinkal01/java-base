@@ -57,11 +57,14 @@ public class Fib {
      */
     int fib2(int n) {
         if (n <= 2) return 1;
+
         int[] array = new int[n + 1];
         array[1] = array[2] = 1;
+
         for (int i = 3; i <= n; i++) {
             array[i] = array[i - 1] + array[i - 2];
         }
+
         return array[n];
     }
 
@@ -72,11 +75,14 @@ public class Fib {
      */
     int fib3(int n) {
         if (n <= 2) return 1;
+
         int[] array = new int[2];
         array[0] = array[1] = 1;
+
         for (int i = 3; i <= n; i++) {
             array[i % 2] = array[(i - 1) % 2] + array[(i - 2) % 2];
         }
+
         return array[n % 2];
     }
 
@@ -90,10 +96,13 @@ public class Fib {
     int fib4(int n) {
         if (n <= 2) return 1;
         int[] array = new int[2];
+
         array[0] = array[1] = 1;
+
         for (int i = 3; i <= n; i++) {
             array[i & 1] = array[(i - 1) & 1] + array[(i - 2) & 1];
         }
+
         return array[n & 1];
     }
 }
