@@ -5,8 +5,7 @@ import org.junit.Test;
 public class _63_不同路径 {
     @Test
     public void test() {
-        System.out.println(uniquePathsWithObstacles(new int[][]{
-                {0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));
+        System.out.println(uniquePathsWithObstacles(new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));
     }
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
