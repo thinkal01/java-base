@@ -1,11 +1,9 @@
 package com.note.thread.aqs;
 
 import lombok.Data;
+import org.junit.Test;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicIntegerArray;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.*;
 
 public class AtomicTest {
     private AtomicInteger value = new AtomicInteger(0);
@@ -30,6 +28,14 @@ public class AtomicTest {
     public class User {
         private String name;
         public volatile int old;
+    }
+
+    @Test
+    public void test() {
+        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        // 成功返回true
+        boolean b = atomicBoolean.compareAndSet(false, true);
+        System.out.println(b);
     }
 
 }
