@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * 并查集
+ *
+ * @param <V>
+ */
 public class UnionFind<V> {
     private Map<V, Node<V>> nodes = new HashMap<>();
 

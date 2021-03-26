@@ -5,26 +5,47 @@ import org.junit.Test;
 public class Test01 {
     @Test
     public void test() {
-        int[] values = {6, 3, 5, 4, 6};
-        int[] weights = {2, 2, 6, 5, 4};
-        int capacity = 10;
-        System.out.println(maxValueExactly(values, weights, capacity));
-
+        System.out.println(findUnsortedSubarray(new int[]{2, 6, 4, 8, 10, 9, 15}));
     }
 
-    public int maxValueExactly(int[] values, int[] weights, int capacity) {
-        if (values == null || values.length == 0) return 0;
-        if (weights == null || weights.length == 0) return 0;
-        if (capacity <= 0) return 0;
-        int[][] dp = new int[values.length + 1][capacity + 1];
+    public int findUnsortedSubarray(int[] nums) {
+        int first = -1, second = 0, max;
 
-        for (int i = 1; i <= values.length; ++i) {
-            for (int j = weights[i - 1]; j <= capacity; ++j) {
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + values[i - 1]);
+        for (int i = 1; i < nums.length; ++i) {
+            if (nums[i] < nums[i - 1]) {
+                first = find(nums, 0, i - 1, nums[i]);
+                second = i;
+                break;
             }
         }
 
-        return dp[values.length][capacity];
+        if (first == -1) return 0;
+        max = second - 1;
+        for (int i = second + 1; i < nums.length; ++i) {
+            if (nums[i] < nums[first]) {
+                first = find(nums, 0, first, nums[i]);
+                second = i;
+            }
+            if (nums[i] < nums[max]) {
+                second = i;
+            } else {
+                max = i;
+            }
+        }
+
+        return first == -1 ? 0 : second - first + 1;
     }
 
+    private int find(int[] nums, int l, int r, int target) {
+        while (l <= r) {
+            int mid = (l + r) >> 1;
+            if (nums[mid] <= target) {
+                ++l;
+            } else {
+                --r;
+            }
+        }
+
+        return l;
+    }
 }

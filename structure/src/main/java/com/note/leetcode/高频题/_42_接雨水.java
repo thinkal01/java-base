@@ -1,39 +1,10 @@
 package com.note.leetcode.高频题;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.RejectedExecutionHandler;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-
 /**
  * https://leetcode-cn.com/problems/trapping-rain-water/
  * 能接多少雨水
  */
 public class _42_接雨水 {
-
-
-    /**
-     * 空间复杂度O(1)，时间复杂度O(n)
-     */
-    public int trap(int[] height) {
-        if (height == null || height.length == 0) return 0;
-
-        int lastIdx = height.length - 2;
-        // 遍历每一根柱子，看每一根柱子上能放多少水
-        int water = 0, leftMax = 0;
-
-        for (int i = 1; i <= lastIdx; i++) {
-            leftMax = Math.max(leftMax, height[i - 1]);
-            // 求出左边最大、右边最大中的较小者
-            int min = Math.min(leftMax, water);
-            // 说明这根柱子不能放水
-            if (min <= height[i]) continue;
-            // 说明这根柱子能放水
-            water += min - height[i];
-        }
-
-        return water;
-    }
 
     public int trap1(int[] height) {
         if (height == null || height.length == 0) return 0;

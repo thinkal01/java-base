@@ -38,6 +38,7 @@ public class SeqQueue<T> implements Queue<T>, Serializable {
 
     /**
      * data 入队,添加成功返回true,否则返回false,可扩容
+     *
      * @param data
      */
     @Override
@@ -60,6 +61,7 @@ public class SeqQueue<T> implements Queue<T>, Serializable {
      * 而不是出现异常的情况，例如在容量固定（有界）的队列中
      * NullPointerException:data==null时抛出
      * IllegalArgumentException:队满,使用该方法可以使Queue的容量固定
+     *
      * @param data
      */
     @Override
@@ -133,6 +135,7 @@ public class SeqQueue<T> implements Queue<T>, Serializable {
 
     /**
      * 扩容的方法
+     *
      * @param capacity
      */
     public void ensureCapacity(int capacity) {

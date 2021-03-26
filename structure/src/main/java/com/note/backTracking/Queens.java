@@ -24,6 +24,7 @@ public class Queens {
 
     /**
      * 从第row行开始摆放皇后
+     *
      * @param row
      */
     void place(int row) {

@@ -26,6 +26,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 添加顶点
+     *
      * @param v
      */
     @Override
@@ -41,6 +42,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 添加边
+     *
      * @param from
      * @param to
      * @param weight
@@ -115,7 +117,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 广度优先遍历
-     * @param begin 开始节点
+     *
+     * @param begin   开始节点
      * @param visitor 访问方法
      */
     @Override
@@ -182,6 +185,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 深度优先遍历,递归解法
+     *
      * @param begin
      */
     public void dfs2(V begin) {
@@ -202,6 +206,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 拓扑排序
+     *
      * @return
      */
     @Override
@@ -253,6 +258,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 最小生成树:prim算法
+     *
      * @return
      */
     private Set<EdgeInfo<V, E>> prim() {
@@ -285,6 +291,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 最小生成树,kruskal算法
+     *
      * @return
      */
     private Set<EdgeInfo<V, E>> kruskal() {
@@ -382,9 +389,10 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 松弛
-     * @param edge 需要进行松弛的边
+     *
+     * @param edge     需要进行松弛的边
      * @param fromPath edge的from的最短路径信息
-     * @param paths 存放着其他点（对于dijkstra来说，就是还没有离开桌面的点）的最短路径信息
+     * @param paths    存放着其他点（对于dijkstra来说，就是还没有离开桌面的点）的最短路径信息
      */
     private boolean relax(Edge<V, E> edge, PathInfo<V, E> fromPath, Map<V, PathInfo<V, E>> paths) {
         // 新的最短路径：beginVertex到edge.from的最短路径 + edge.weight
@@ -409,6 +417,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 最短路径,dijkstra算法
+     *
      * @param begin
      * @return
      */
@@ -446,9 +455,10 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 松弛
-     * @param edge 需要进行松弛的边
+     *
+     * @param edge     需要进行松弛的边
      * @param fromPath edge的from的最短路径信息
-     * @param paths 存放着其他点（对于dijkstra来说，就是还没有离开桌面的点）的最短路径信息
+     * @param paths    存放着其他点（对于dijkstra来说，就是还没有离开桌面的点）的最短路径信息
      */
     private void relaxForDijkstra(Edge<V, E> edge, PathInfo<V, E> fromPath, Map<Vertex<V, E>, PathInfo<V, E>> paths) {
         // 新的可选择的最短路径：beginVertex到edge.from的最短路径 + edge.weight
@@ -475,6 +485,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 从paths中挑一个最小的路径出来
+     *
      * @param paths
      * @return
      */
@@ -494,6 +505,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * Floyd多源最短路径算法
+     *
      * @return
      */
     @Override
@@ -558,6 +570,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 顶点
+     *
      * @param <V>
      * @param <E>
      */
@@ -597,6 +610,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     /**
      * 边
+     *
      * @param <V>
      * @param <E>
      */

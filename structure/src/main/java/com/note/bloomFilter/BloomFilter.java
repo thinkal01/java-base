@@ -2,6 +2,7 @@ package com.note.bloomFilter;
 
 /**
  * 布隆过滤器
+ *
  * @param <T>
  */
 public class BloomFilter<T> {
@@ -101,6 +102,7 @@ public class BloomFilter<T> {
 
     /**
      * 查看index位置的二进位的值
+     *
      * @return true代表1, false代表0
      */
     private boolean get(int index) {

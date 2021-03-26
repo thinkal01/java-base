@@ -62,7 +62,6 @@ public class _3_无重复字符的最长子串 {
 
             // 存储这个字符出现的位置
             prevIdxes.put(chars[i], i);
-
         }
 
         max = Math.max(max, chars.length - li);

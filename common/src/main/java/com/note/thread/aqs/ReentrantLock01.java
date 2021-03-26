@@ -11,6 +11,27 @@ public class ReentrantLock01 {
     Lock lock = new ReentrantLock();
 
     @Test
+    public void test02() throws InterruptedException {
+        ReentrantLock l = new ReentrantLock();
+        for (int i = 0; i < 2; ++i) {
+            new Thread(() -> {
+                lock.lock();
+                try {
+                    Thread.sleep(100_000_000_000000l);
+                } catch (InterruptedException e) {
+                }
+            }).start();
+        }
+
+        TimeUnit.DAYS.sleep(1);
+    }
+
+    @Test
+    public void test03() {
+        lock.lock();
+    }
+
+    @Test
     public void test() {
         try {
             // lock.lock();
