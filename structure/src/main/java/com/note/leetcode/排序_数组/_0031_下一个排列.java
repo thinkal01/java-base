@@ -13,6 +13,11 @@ import org.junit.Test;
  */
 public class _0031_下一个排列 {
 
+    @Test
+    public void test() {
+        nextPermutation(new int[]{1, 3, 2});
+    }
+
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
         while (i >= 0 && nums[i + 1] <= nums[i]) {

@@ -1,10 +1,12 @@
 package com.note.leetcode.字符串;
 
+import org.junit.Test;
+
 /**
  * https://leetcode-cn.com/problems/reverse-words-in-a-string/
  */
 public class _151_翻转字符串里的单词 {
-    public static String reverseWords(String s) {
+    public static String reverseWords2(String s) {
         if (s == null) return "";
         char[] chars = s.toCharArray();
 
@@ -65,10 +67,34 @@ public class _151_翻转字符串里的单词 {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println("666_" + reverseWords("") + "_666");
+    @Test
+    public void test() {
+        System.out.println("666_" + reverseWords("a good   example") + "_666");
         System.out.println("666_" + reverseWords("  hello world!     ") + "_666");
         System.out.println("666_" + reverseWords("a good   example") + "_666");
         System.out.println("666_" + reverseWords("are you ok") + "_666");
+    }
+
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+
+        char[] chars = s.toCharArray();
+
+        int right = chars.length - 1, left = -1;
+        while (right > 0) {
+            while (right >= 0 && chars[right] == ' ') --right;
+
+            left = right;
+            while (left > 0 && chars[left - 1] != ' ') --left;
+
+            if (right >= 0) {
+                sb.append(chars, left, right - left + 1);
+                sb.append(' ');
+            }
+            right = left - 1;
+        }
+
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
     }
 }
