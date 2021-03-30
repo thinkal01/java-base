@@ -11,21 +11,26 @@ public class LCS {
 
     /**
      * 字符串最长公共子串
+     *
      * @param text1
      * @param text2
      * @return
      */
     public int longestCommonSubsequence(String text1, String text2) {
         if (text1 == null || text2 == null) return 0;
+
         char[] chars1 = text1.toCharArray();
         if (chars1.length == 0) return 0;
+
         char[] chars2 = text2.toCharArray();
         if (chars2.length == 0) return 0;
+
         char[] rowsChars = chars1, colsChars = chars2;
         if (chars1.length < chars2.length) {
             colsChars = chars1;
             rowsChars = chars2;
         }
+
         int[] dp = new int[colsChars.length + 1];
         for (int i = 1; i <= rowsChars.length; i++) {
             int cur = 0;
@@ -39,11 +44,13 @@ public class LCS {
                 }
             }
         }
+
         return dp[colsChars.length];
     }
 
     /**
      * 空间优化,元素少的作为列
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -76,6 +83,7 @@ public class LCS {
 
     /**
      * 一维数组
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -104,6 +112,7 @@ public class LCS {
 
     /**
      * 滚动数组
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -130,6 +139,7 @@ public class LCS {
 
     /**
      * 非递归实现
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -154,6 +164,7 @@ public class LCS {
 
     /**
      * 递归实现
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -173,4 +184,5 @@ public class LCS {
         return Math.max(lcs1(nums1, i - 1, nums2, j),
                 lcs1(nums1, i, nums2, j - 1));
     }
+
 }
