@@ -27,7 +27,7 @@ public class Problem_0306_累加数 {
                 if (num2 == 0 && array[j] == '0')
                     break;
             }
-            if(num1 == 0)
+            if (num1 == 0)
                 break;
 
         }

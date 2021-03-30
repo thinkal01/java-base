@@ -149,6 +149,7 @@ public class MinHeap<E> {
 
     /**
      * 让index位置的元素下滤
+     *
      * @param index
      */
     private void siftDown(int index) {
@@ -186,6 +187,7 @@ public class MinHeap<E> {
 
     /**
      * 让index位置的元素上滤
+     *
      * @param index
      */
     private void siftUp(int index) {

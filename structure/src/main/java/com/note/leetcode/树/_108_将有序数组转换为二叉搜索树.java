@@ -28,4 +28,19 @@ public class _108_将有序数组转换为二叉搜索树 {
         node.right = helper(nums, mid + 1, right);
         return node;
     }
+
+    public TreeNode sortedArrayToBST2(int[] nums) {
+        if (nums == null || nums.length == 0) return null;
+        return process(nums, 0, nums.length - 1);
+    }
+
+    private TreeNode process(int[] nums, int start, int end) {
+        int mid = (start + end) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
+        if (start < mid)
+            node.left = process(nums, start, mid - 1);
+        if (mid < end)
+            node.right = process(nums, mid + 1, end);
+        return node;
+    }
 }

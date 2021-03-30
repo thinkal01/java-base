@@ -8,6 +8,29 @@ import java.util.Map;
  */
 public class _3_无重复字符的最长子串 {
     public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        char[] chars = s.toCharArray();
+        // 用数组代替map集合 可以减少取的时间
+        int[] map = new int[256];
+        for (int i = 0; i < map.length; i++) {
+            map[i] = -1;
+        }
+
+        int maxLen = 0;
+        int pre = -1;
+        for (int i = 0; i < chars.length; i++) {
+            pre = Math.max(pre, map[chars[i]]);
+            maxLen = Math.max(i - pre, maxLen);
+            map[chars[i]] = i;
+        }
+
+        return maxLen;
+    }
+
+    public int lengthOfLongestSubstring2(String s) {
         if (s == null) return 0;
         char[] chars = s.toCharArray();
         if (chars.length == 0) return 0;
@@ -39,7 +62,7 @@ public class _3_无重复字符的最长子串 {
         return max;
     }
 
-    public int lengthOfLongestSubstring2(String s) {
+    public int lengthOfLongestSubstring3(String s) {
         if (s == null) return 0;
         char[] chars = s.toCharArray();
         if (chars.length == 0) return 0;
@@ -67,4 +90,5 @@ public class _3_无重复字符的最长子串 {
         max = Math.max(max, chars.length - li);
         return max;
     }
+
 }

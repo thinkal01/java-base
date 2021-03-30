@@ -20,8 +20,7 @@ public class _22_括号生成 {
      * @param rightRemain 右括号的剩余数量
      * @param string      用来存放每一层的选择
      */
-    private void dfs(int idx, int leftRemain, int rightRemain,
-                     char[] string, List<String> list) {
+    private void dfs(int idx, int leftRemain, int rightRemain, char[] string, List<String> list) {
         if (idx == string.length) {
             list.add(new String(string));
             return;
@@ -29,7 +28,6 @@ public class _22_括号生成 {
 
         // 枚举这一层所有可能的选择
         // 选择一种可能之后，进入下一层搜索
-
         // 什么情况可以选择左括号？左括号的数量 > 0
         // 选择左括号，然后进入下一层搜索
         if (leftRemain > 0) {

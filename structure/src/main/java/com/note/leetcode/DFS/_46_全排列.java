@@ -10,9 +10,13 @@ import java.util.List;
 public class _46_全排列 {
     private List<List<Integer>> list;
     private int[] nums;
-    /** 用来保存每一层选择的数字 */
+    /**
+     * 用来保存每一层选择的数字
+     */
     private int[] result;
-    /** 用来标记nums中的数字是否被使用过了 */
+    /**
+     * 用来标记nums中的数字是否被使用过了
+     */
     private boolean[] used;
 
     public List<List<Integer>> permute(int[] nums) {

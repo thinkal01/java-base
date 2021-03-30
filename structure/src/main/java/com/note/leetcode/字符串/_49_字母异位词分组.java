@@ -6,9 +6,9 @@ import java.util.*;
  * 输入: ["eat", "tea", "tan", "ate", "nat", "bat"],
  * 输出:
  * [
- *   ["ate","eat","tea"],
- *   ["nat","tan"],
- *   ["bat"]
+ * ["ate","eat","tea"],
+ * ["nat","tan"],
+ * ["bat"]
  * ]
  */
 public class _49_字母异位词分组 {

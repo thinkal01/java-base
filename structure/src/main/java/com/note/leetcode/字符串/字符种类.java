@@ -1,4 +1,4 @@
-﻿package com.note.offer;
+package com.note.leetcode.字符串;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class 字符种类 {
         Set<Integer> set = new HashSet<>();
 
         for (String str : strs) {
-            // 记录字符种类
+            // 采用整型32位记录字符种类
             int value = 0;
             for (char c : str.toCharArray()) {
                 value |= (1 << (c - 'a'));

@@ -1,4 +1,4 @@
-package com.note.leetcode.动态规划;
+package com.note.leetcode.字符串;
 
 /**
  * https://leetcode-cn.com/problems/longest-palindromic-substring/
