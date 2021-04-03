@@ -12,8 +12,6 @@ public class Problem_0313_超级丑数 {
         System.out.println(a == 0L);
     }
 
-
-
     public int nthSuperUglyNumber1(int n, int[] primes) {
         int[] uglyNumbers = new int[n];
         uglyNumbers[0] = 1;
@@ -51,7 +49,6 @@ public class Problem_0313_超级丑数 {
             while (!queue.isEmpty() && queue.peek() == cur)
                 queue.poll();
         }
-        return (int)cur;
-
+        return (int) cur;
     }
 }

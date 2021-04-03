@@ -1,7 +1,5 @@
 package com.note.leetcode.排序_数组;
 
-import org.junit.Test;
-
 /**
  * 数组中有正数也有负数，数组中一个或连续的多个整数组成一个子数组，求连续子数组的最大和
  */

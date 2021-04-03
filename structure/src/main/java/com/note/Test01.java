@@ -2,50 +2,33 @@ package com.note;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Test01 {
+
+    /**
+     * 求 a+b 的中位数
+     */
     @Test
     public void test() {
-        System.out.println(findUnsortedSubarray(new int[]{2, 6, 4, 8, 10, 9, 15}));
+        int a = Integer.MAX_VALUE - 10;
+        int b = Integer.MAX_VALUE - 20;
+        // + 优先级高于 >>>
+        System.out.println(a + b >>> 1);
+        System.out.println(a + (b - a >> 1));
+        System.out.println(a + b >> 1);
     }
 
-    public int findUnsortedSubarray(int[] nums) {
-        int first = -1, second = 0, max;
-
-        for (int i = 1; i < nums.length; ++i) {
-            if (nums[i] < nums[i - 1]) {
-                first = find(nums, 0, i - 1, nums[i]);
-                second = i;
-                break;
-            }
-        }
-
-        if (first == -1) return 0;
-        max = second - 1;
-        for (int i = second + 1; i < nums.length; ++i) {
-            if (nums[i] < nums[first]) {
-                first = find(nums, 0, first, nums[i]);
-                second = i;
-            }
-            if (nums[i] < nums[max]) {
-                second = i;
-            } else {
-                max = i;
-            }
-        }
-
-        return first == -1 ? 0 : second - first + 1;
-    }
-
-    private int find(int[] nums, int l, int r, int target) {
-        while (l <= r) {
-            int mid = (l + r) >> 1;
-            if (nums[mid] <= target) {
-                ++l;
-            } else {
-                --r;
-            }
-        }
-
-        return l;
+    /**
+     * 删除sb字符
+     */
+    public void test2() {
+        StringBuilder sb = new StringBuilder();
+        sb.deleteCharAt(sb.length() - 1);
     }
 }

@@ -42,6 +42,7 @@ public class Main {
 
     /**
      * 暴力解法,重复利用前面计算结果
+     *
      * @param nums
      */
     static int maxSubarray2(int[] nums) {
@@ -60,6 +61,7 @@ public class Main {
 
     /**
      * 暴力解法
+     *
      * @param nums
      */
     static int maxSubarray1(int[] nums) {

@@ -6,26 +6,28 @@ import java.util.HashSet;
 /**
  * 数组切分4份，和相同
  */
-public class Code05_Split4Parts {
+public class 数组切为4等分 {
 
     public static boolean canSplits1(int[] arr) {
         if (arr == null || arr.length < 7) {
             return false;
         }
-        HashSet<String> set = new HashSet<String>();
+        HashSet<String> set = new HashSet<>();
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
         int leftSum = arr[0];
         for (int i = 1; i < arr.length - 1; i++) {
-            set.add(String.valueOf(leftSum) + "_" + String.valueOf(sum - leftSum - arr[i]));
+            set.add(leftSum + "_" + (sum - leftSum - arr[i]));
             leftSum += arr[i];
         }
+
         int l = 1;
         int lsum = arr[0];
         int r = arr.length - 2;
         int rsum = arr[arr.length - 1];
+
         while (l < r - 3) {
             if (lsum == rsum) {
                 String lkey = String.valueOf(lsum * 2 + arr[l]);
